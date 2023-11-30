@@ -14,13 +14,12 @@ Encoding: UTF-8
 LazyData: true
 Language: en-GB
 Imports:
+    cli,
     orderly1 (>= 1.7.0),
-    spud (>= 0.1.5),
     zip
 Suggests:
-    mockery,
+    openssl,
     testthat
 Remotes:
-    reside-ic/spud,
     orderly1=vimc/orderly@vimc-7135
-RoxygenNote: 7.0.2
+RoxygenNote: 7.2.3
