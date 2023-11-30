@@ -1,0 +1,26 @@
+Package: orderly.sharedrive
+Title: Shared drive remote for Orderly
+Version: 0.1.5
+Authors@R: c(person("Rob", "Ashton", role = c("aut", "cre"),
+                    email = "r.ashton@imperial.ac.uk"),
+             person("Imperial College of Science, Technology and Medicine",
+                    role = "cph"))
+Description: Store orderly reports on a shared drive. Provides an orderly
+    remote driver that can be used to share orderly reports using
+    a network drive or synced one drive. You can use this as a
+    a lightweight way of using orderly within a team.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Language: en-GB
+Imports:
+    orderly1 (>= 1.7.0),
+    spud (>= 0.1.5),
+    zip
+Suggests:
+    mockery,
+    testthat
+Remotes:
+    reside-ic/spud,
+    orderly1=vimc/orderly@vimc-7135
+RoxygenNote: 7.0.2
