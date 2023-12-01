@@ -63,8 +63,8 @@ test_that("pull", {
   expect_true(file.exists(res))
   expect_true(file.info(res)$isdir)
   expect_setequal(dir(res), dir(paths$report_paths$example[1]))
-  expect_setequal(openssl::md5(dir(res)),
-                  openssl::md5(dir(paths$report_paths$example[1])))
+  expect_equal(openssl::md5(dir(res)),
+               openssl::md5(dir(paths$report_paths$example[1])))
 })
 
 
