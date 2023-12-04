@@ -1,6 +1,9 @@
 ## NOTE: duplicated out of orderlyweb for now - it's not clear where
 ## this really belongs.  See VIMC-3771
 unzip_archive <- function(zip, name, id) {
+  if (!file.exists(zip)) {
+    cli::cli_abort("Can't pull archive from '{zip}', file doesn't exist.")
+  }
   dest <- tempfile()
   res <- utils::unzip(zip, exdir = dest)
 
