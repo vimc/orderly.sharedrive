@@ -8,7 +8,13 @@
 
 An [`orderly1`](https://github.com/vimc/orderly1) remote hosted on a shared drive. Either a network share or a synced onedrive.
 
-### Usage
+## Installation
+
+```
+remotes::install_github("vimc/orderly.sharedrive")
+```
+
+## Usage
 
 Configure your `orderly_config.yml` as, for example:
 
@@ -22,7 +28,7 @@ remote:
 
 Where
 
-* `path` is the path to your shared drive. This can be an environment variable
+* `path` is the path to your shared drive. We recommend you use an environment variable stored in `orderly_envir.yml` if you are working with other people
 
 `orderly.sharedrive` will store files as `archive/<name>/<id>` where `<name>` is the report name and `<id>` is a zip archive of the report contents.  These must be treated as read-only and must not be modified (they do not have a file extension to help this).
 
