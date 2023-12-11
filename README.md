@@ -28,7 +28,7 @@ remote:
 
 Where
 
-* `path` is the path to your shared drive. We recommend you use an environment variable stored in `orderly_envir.yml` if you are working with other people
+* `path` is the path to your shared drive or the name of an environment variable. If you are working with other people we recommend you use an environment variable with the value set in `orderly_envir.yml`.
 
 `orderly.sharedrive` will store files as `archive/<name>/<id>` where `<name>` is the report name and `<id>` is a zip archive of the report contents.  These must be treated as read-only and must not be modified (they do not have a file extension to help this).
 
