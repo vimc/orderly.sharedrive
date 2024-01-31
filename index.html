@@ -83,8 +83,18 @@
 <p>Where</p>
 <ul>
 <li>
-<code>path</code> is the path to your shared drive or the name of an environment variable. If you are working with other people we recommend you use an environment variable with the value set in <code>orderly_envir.yml</code>.</li>
+<code>path</code> is the path to your shared drive or the name of an environment variable.</li>
 </ul>
+<p>If you are working with other people we recommend you use an environment variable with the value set in <code>orderly_envir.yml</code>. To do so, create or add to a file <code>orderly_envir.yml</code> at the root of your orderly project.</p>
+<pre><code>SHAREPOINT_PATH: /home/me/path/to/sharepoint/drive</code></pre>
+<p>And then in your <code>orderly_config.yml</code> set</p>
+<pre><code>remote:
+  real:
+    driver: orderly.sharedrive::orderly_remote_sharedrive
+    args:
+      path: $SHAREPOINT_PATH
+</code></pre>
+<p>Add <code>orderly_envir.yml</code> to your gitignore, then each user of your repo can set it as appropriate for their machine.</p>
 <p><code>orderly.sharedrive</code> will store files as <code>archive/&lt;name&gt;/&lt;id&gt;</code> where <code>&lt;name&gt;</code> is the report name and <code>&lt;id&gt;</code> is a zip archive of the report contents. These must be treated as read-only and must not be modified (they do not have a file extension to help this).</p>
 <p>With this set up, then <code>orderly1::pull_dependencies</code>, <code>orderly1::pull_archive</code> and <code>orderly1::push_archive</code> will work, and you can use your network or onedrive remote to distribute orderly results within your group.</p>
 </div>
